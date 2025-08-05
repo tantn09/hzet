@@ -11,4 +11,5 @@ body {
 }
 main {
   flex: 1;
+  margin-top: -118.5px; 
 }
