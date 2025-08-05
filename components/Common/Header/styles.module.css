@@ -1,0 +1,32 @@
+.container {
+  background-color: #f5f5f5;
+}
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+.logo {
+  display: flex;
+}
+.navBar {
+  display: flex;
+  gap: 15px;
+  
+}
+.navBarItem {
+    font-size: 20px;
+    color: #000;
+    padding: 20px; 
+    border-radius: 5px;
+    transition: background-color 0.5s ease;
+    &:hover{
+        background-color: #4e2a84;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+}
