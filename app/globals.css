@@ -7,9 +7,12 @@ body {
 .globalLayout {
   display: flex;
   flex-direction: column;
-  min-height: 100vh
+  min-height: 100vh;
 }
 main {
   flex: 1;
-  margin-top: -118.5px; 
+  margin-top: -80px; 
+  @media (min-width: 1024px) {
+    margin-top: -101px; 
+  }
 }

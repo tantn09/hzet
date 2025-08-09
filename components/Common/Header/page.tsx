@@ -1,8 +1,8 @@
 'use client';
 
 import Image from "next/image";
-import styles from "./styles.module.css";
 import { useEffect, useState } from "react";
+import styles from "./styles.module.css";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -17,24 +17,36 @@ export default function Header() {
   }, []);
 
   return (
-    <div className={styles.container} style={{backgroundColor: scrolled ? "#000000e6" : "transparent"}}>
+    <div className={styles.container} style={{ backgroundColor: scrolled ? "#000000e6" : "transparent" }}>
       <div className={styles.headerContainer}>
         <div className={styles.logo}>
           <Image
             src="/images/logo.svg"
+            className={styles.logoImg}
             alt="Logo"
             width={80}
             height={80}
             quality={100}
             priority
           />
-          <div>HZET GLOBAL</div>
+          <div className={styles.brandName}>HZET GLOBAL</div>
+        </div>
+        <div className={styles.navBarM}>
+          <Image
+            src="/icon/menu.svg"
+            alt="Logo"
+            width={50}
+            height={50}
+            quality={100}
+            priority
+          />
         </div>
         <div className={styles.navBar}>
-            <div className={styles.navBarItem}>Giới Thiệu</div>
-            <div className={styles.navBarItem}>Tin Tuyển Dụng</div>
-            <div className={styles.navBarItem}>Tư vấn</div>
-            <div className={styles.navBarItem}>Liên Hệ</div>
+          <a className={styles.navBarItem}>Giới Thiệu</a>
+          <a className={styles.navBarItem}>Xuất Khẩu Lao Động</a>
+          <a className={styles.navBarItem}>Du Học</a>
+          <a className={styles.navBarItem}>Tin Tức</a>
+          <a className={styles.navBarItem}>Liên Hệ</a>
         </div>
       </div>
     </div>

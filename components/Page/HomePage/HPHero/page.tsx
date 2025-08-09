@@ -4,10 +4,12 @@ export const HPHero = () => {
     <div className={styles.container}>
       <div className={styles.heroContainer}>
         <div className={styles.brand}>HZET GLOBAL</div>
-        <div className={styles.title}>Chương Trình Du Học Chuyển Tiếp Bậc Thạc Sỹ</div>
-        <div className={styles.description}>Được thiết kế bởi các đại học top đầu tại Úc, New Zealand - Top 1% thế giới.
-        Học viên có 1 giai đoạn học tại Viện ISB sau đó chuyển tiếp và học tập tại nước ngoài.</div>
-        <button className={styles.staterBtn} >Bắt Đầu Ngay</button>
+        <div className={styles.title}>
+          <div>CÔNG TY TNHH HZET GLOBAL</div>
+          <div>KẾT NỐI NHÂN LỰC VIỆT VỚI THẾ GIỚI</div>
+        </div>
+        <p className={styles.description}>Chuyên xuất khẩu lao động và tư vấn du học, kết nối nhân lực Việt Nam với cơ hội làm việc và học tập tại nhiều quốc gia khác. Chúng tôi cam kết dịch vụ uy tín, minh bạch và chi phí hợp lý, đồng hành cùng khách hàng trên hành trình vươn ra thế giới.</p>
+        <button className={styles.staterBtn} >Về Chúng Tôi</button>
       </div>
     </div>
   );
