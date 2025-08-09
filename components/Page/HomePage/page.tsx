@@ -8,7 +8,9 @@ export const HomePage = () => {
     <div className={styles.container}>
       <HPHero />
       <HPContent />
-      <HPCard />
+      <HPCard title="Xuất Khẩu Lao Động" isDarkBackground={true}/>
+      <HPCard title="Du Học"/>
+      <HPCard title="Tin Tức" isDarkBackground={true}/>
     </div>
   );
 };

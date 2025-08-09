@@ -1,10 +1,14 @@
 import Image from "next/image";
 import styles from "./styles.module.css";
-export const HPCard = () => {
+type HPCardProps = {
+  title: string;
+  isDarkBackground?: boolean
+};
+export const HPCard = ({title, isDarkBackground = false}: HPCardProps) => {
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${isDarkBackground ? styles.dark : null}`}>
       <div className={styles.subContainer}>
-        <div className={styles.title}>Tin Tức</div>
+        <div className={styles.title}>{title}</div>
         <div className={styles.block}>
           <div className={styles.blockItem}>
             <Image src={"/images/vision.jpg"} className={styles.image} width={360} height={203} alt="image" />

@@ -86,16 +86,22 @@
     content: "";
     position: absolute;
     left: 0;
-    top: 6px;
+    top: 10px;
     width: 8px;
     height: 8px;
     background-color: #01011d;
     border-radius: 50%;
 
     @media (min-width: 1024px) {
-        top: 10px;
+        top: 8px;
         width: 6px;
         height: 6px;
+    }
+
+    @media (min-width: 1280px) {
+        top: 11px;
+        width: 8px;
+        height: 8px;
     }
 }
 
