@@ -20,6 +20,9 @@
     @media (min-width: 1024px) {
         padding: 64px;
     }
+    @media (min-width: 1280px) {
+        padding: 80px 64px;
+    }
 }
 
 .title {
