@@ -28,6 +28,7 @@ export default function Footer() {
             <span>Email: admissions.mba@isb.edu.vn</span>
           </div>
         </div>
+        <hr className={styles.divider}/>
         <div className={styles.block}>
           <div className={styles.blockItem}>Kết nối với chúng tôi:</div>
           <div className={styles.blockItem}>
