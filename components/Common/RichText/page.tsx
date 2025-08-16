@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import {
   BLOCKS,
@@ -6,11 +6,14 @@ import {
   MARKS,
   Node,
   Document,
-} from '@contentful/rich-text-types';
-import { documentToReactComponents, Options } from '@contentful/rich-text-react-renderer';
-import React from 'react';
-import './richtext.css';
-
+} from "@contentful/rich-text-types";
+import {
+  documentToReactComponents,
+  Options,
+} from "@contentful/rich-text-react-renderer";
+import React from "react";
+import "./richtext.css";
+import Image from "next/image";
 
 type Props = {
   content: Document;
@@ -49,20 +52,32 @@ const options: Options = {
       <li className="list-item">{children}</li>
     ),
     [BLOCKS.HR]: () => <hr className="divider" />,
-
+    [BLOCKS.EMBEDDED_ENTRY]: node => {
+        return (
+          <iframe
+            height='400'
+            width='100%'
+            src={node.data.target.fields.videoUrl}
+            title={node.data.target.fields.title}
+            allowFullScreen={true}
+          />
+        )
+    },
     [BLOCKS.EMBEDDED_ASSET]: (node: Node) => {
       const asset = (node.data as any)?.target?.fields;
 
       if (!asset?.file?.url) return null;
 
-      const url = asset.file.url.startsWith('//') ? `https:${asset.file.url}` : asset.file.url;
-      const title = asset.title || '';
+      const url = asset.file.url.startsWith("//")
+        ? `https:${asset.file.url}`
+        : asset.file.url;
+      const title = asset.title || "";
 
-      if (asset.file.contentType?.includes('image')) {
-        return <img src={url} alt={title} className="content-image" />;
+      if (asset.file.contentType?.includes("image")) {
+        return <Image width={400} height={400} src={url} alt={title} className="content-image" />;
       }
 
-      if (asset.file.contentType?.includes('html') && url.includes('youtube')) {
+      if (asset.file.contentType?.includes("html") && url.includes("youtube")) {
         return (
           <div className="video-wrapper">
             <iframe
@@ -81,7 +96,12 @@ const options: Options = {
     [INLINES.HYPERLINK]: (node: Node, children: React.ReactNode) => {
       const url = (node.data as any)?.uri;
       return (
-        <a href={url} target="_blank" rel="noopener noreferrer" className="link">
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="link"
+        >
           {children}
         </a>
       );
@@ -90,5 +110,9 @@ const options: Options = {
 };
 
 export default function RichText({ content }: Props) {
-  return <div className="richtext-container">{documentToReactComponents(content, options)}</div>;
+  return (
+    <div className="richtext-container">
+      {documentToReactComponents(content, options)}
+    </div>
+  );
 }

@@ -44,3 +44,5 @@ tailwind.config.js.backup
 
 # VS Code settings
 .vscode/
+
+.env.local

@@ -3,7 +3,7 @@ import client from "@/lib/contentful";
 import { notFound } from "next/navigation";
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export default async function NewsDetail({ params }: Props) {
