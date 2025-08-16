@@ -16,19 +16,19 @@ export default function Footer() {
               alt="Address"
             />
             <span>
-              Văn phòng tuyển sinh: 17 Phạm Ngọc Thạch, Phường Xuân Hòa, TP. HCM
+              Địa Chỉ: Tầng 06 - nhà số 208 Thượng Đình - Phường Khương Đình - Hà Nội
             </span>
           </div>
           <div className={styles.blockItem}>
             <Image src="/icon/phone.svg" width={20} height={20} alt="Phone" />
-            <span>Hotline: 028 3622 1818</span>
+            <span>Số Điện Thoại: +84969513236 (zalo, viber, whatsapp)</span>
           </div>
           <div className={styles.blockItem}>
             <Image src="/icon/email.svg" width={20} height={20} alt="Email" />
-            <span>Email: admissions.mba@isb.edu.vn</span>
+            <span>Email: hzetglobal@gmail.com</span>
           </div>
         </div>
-        <hr className={styles.divider}/>
+        <hr className={styles.divider} />
         <div className={styles.block}>
           <div className={styles.blockItem}>Kết nối với chúng tôi:</div>
           <div className={styles.blockItem}>

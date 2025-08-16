@@ -1,0 +1,19 @@
+.container {
+  display: block;
+  
+}
+.aboutContainer {
+  display: block;
+  margin: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  @media (min-width: 768px) {
+    margin: 48px;
+  }
+  @media (min-width: 1024px) {
+    margin: 48px 64px;
+  }
+  @media (min-width: 1280px) {
+    margin: 96px;
+  }
+}

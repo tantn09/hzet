@@ -1,18 +1,6 @@
 body {
   background: #ffffff;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
   margin: 0
 }
-.globalLayout {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-main {
-  flex: 1;
-  margin-top: -80px; 
-  @media (min-width: 1024px) {
-    margin-top: -101px; 
-  }
-}
+

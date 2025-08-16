@@ -1,14 +1,26 @@
-"use client";
+'use client';
 
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
-export default function Header() {
+export default function HomeHeader() {
+  const [scrolled, setScrolled] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <div className={styles.container}>
+    <div className={styles.container} style={{ backgroundColor: scrolled ? "#000000e6" : "transparent" }}>
       <div className={styles.headerContainer}>
         <div className={styles.logo} onClick={() => router.push("/")}>
           <Image
