@@ -1,97 +1,100 @@
 .container {
-    display: block;
+  display: block;
 }
 
 .heroContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
 
-    min-height: calc(100vh);
-    background-image: url('/images/homeBG.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  min-height: 100svh;
+  background-image: url("/images/homeBG.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
-    color: #fff;
+  color: #fff;
+  @media (min-width: 1024px) {
+    min-height: 100vh;
+  }
 }
 
 .brand {
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 30px;
-    font-weight: 800;
-    line-height: 1.5;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.5;
 
-    @media (min-width: 768px) {
-        font-size: 48px;
-    }
+  @media (min-width: 768px) {
+    font-size: 48px;
+  }
 
-    @media (min-width: 1280px) {
-        font-size: 56px;
-    }
+  @media (min-width: 1280px) {
+    font-size: 56px;
+  }
 }
 
 .title {
-    font-size: 18px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-transform: uppercase;
+  text-align: center;
+  width: 340px;
+
+  @media (min-width: 768px) {
+    font-size: 28px;
+    width: 600px;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 36px;
     font-weight: 500;
     line-height: 1.5;
-    text-transform: uppercase;
-    text-align: center;
-    width: 340px;
-
-    @media (min-width: 768px) {
-        font-size: 28px;
-        width: 600px;
-    }
-
-    @media (min-width: 1280px) {
-        font-size: 36px;
-        font-weight: 500;
-        line-height: 1.5;
-        width: 1000px;
-    }
+    width: 1000px;
+  }
 }
 
 .description {
-    font-size: 16px;
-    font-weight: 400;
-    text-align: center;
-    line-height: 1.2;
-    width: 320px;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.2;
+  width: 320px;
 
-    @media (min-width: 768px) {
-        font-size: 24px;
-        width: 600px;
-    }
+  @media (min-width: 768px) {
+    font-size: 24px;
+    width: 600px;
+  }
 
-    @media (min-width: 1024px) {
-        width: 800px;
-    }
+  @media (min-width: 1024px) {
+    width: 800px;
+  }
 
-    @media (min-width: 1280px) {
-        font-size: 28px;
-        font-weight: 500;
-        line-height: 1.5;
-        width: 1000px;
-    }
+  @media (min-width: 1280px) {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.5;
+    width: 1000px;
+  }
 }
 
 .staterBtn {
-    background-color: transparent;
-    color: #fff;
-    font-size: 18px;
-    font-weight: 400;
-    padding: 20px 40px;
+  background-color: transparent;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 20px 40px;
 
-    border: solid 1px #fff;
-    border-radius: 5px;
+  border: solid 1px #fff;
+  border-radius: 5px;
 
-    &:hover {
-        background-color: #fff;
-        color: #000;
-        cursor: pointer;
-    }
+  &:hover {
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+  }
 }

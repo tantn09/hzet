@@ -1,6 +1,6 @@
-import Footer from "@/components/Common/Footer/page";
+import Footer from "@/components/Common/Layout/Footer/page";
 import './home.layout.css'
-import HomeHeader from "@/components/Common/HomeHeader/page";
+import HomeHeader from "@/components/Common/Layout/HomeHeader/page";
 export default function HomeLayout({
   children,
 }: {

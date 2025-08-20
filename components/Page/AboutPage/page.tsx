@@ -11,7 +11,7 @@ export default function AboutPage() {
           và người lao động trên con đường chinh phục tri thức, phát triển sự
           nghiệp và khẳng định giá trị bản thân ở môi trường toàn cầu.
         </p>
-        <h2>Sứ Mệnh</h2>
+        <h1>Sứ Mệnh</h1>
         <p>
           • Mang đến những lộ trình du học và làm việc minh bạch – hiệu quả –
           tiết kiệm chi phí.
@@ -25,7 +25,7 @@ export default function AboutPage() {
           • Đồng hành cùng khách hàng từ bước đầu tư vấn, chuẩn bị hồ sơ cho đến
           khi ổn định cuộc sống tại nước ngoài.
         </p>
-        <h2>Lĩnh Vực</h2>
+        <h1>Lĩnh Vực</h1>
         <p>
           • Tư vấn du học: Hỗ trợ chọn trường, ngành học, săn học bổng, đào tạo
           ngoại ngữ, hướng dẫn hồ sơ visa.
@@ -38,7 +38,7 @@ export default function AboutPage() {
           • Đào tạo & định hướng: Khóa học ngôn ngữ, kỹ năng mềm, văn hóa hội
           nhập.
         </p>
-        <h2>Cam Kết</h2>
+        <h1>Cam Kết</h1>
         <p>• Minh bạch chi phí – rõ ràng hợp đồng.</p>
         <p>• Tư vấn đúng nhu cầu – lộ trình rõ ràng.</p>
         <p>• Hỗ trợ trọn vẹn trước – trong – sau khi ra nước ngoài.</p>

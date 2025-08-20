@@ -1,6 +1,6 @@
 .container {
   background-color: #000;
-  color: #fff
+  color: #fff;
 }
 
 .footerContainer {
@@ -8,11 +8,9 @@
   flex-direction: column;
   gap: 0;
   margin: 24px;
-  max-width: 1200px;
-  margin: 0 auto;
   @media (min-width: 768px) {
     gap: 20px;
-    margin: 24px 48px
+    margin: 24px 48px;
   }
   @media (min-width: 1024px) {
     flex-direction: row;
@@ -20,7 +18,8 @@
     margin: 64px;
   }
   @media (min-width: 1280px) {
-    margin: 64px 96px;
+    max-width: 1200px;
+    margin: 64px auto;
     flex-direction: row;
     justify-content: space-between;
   }
@@ -30,7 +29,6 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  
 }
 
 .divider {

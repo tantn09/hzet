@@ -1,6 +1,32 @@
+:root {
+  --background-color: #fff;
+  --secondary-color: #f3f3f3;
+  --padding: 16px;
+}
 body {
-  background: #ffffff;
+  background: var(--background-color);
   color: var(--foreground);
   margin: 0
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 600;
+    background: linear-gradient(270deg, #4e2a84 0, #ff1253 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+
+    @media (min-width: 768px) {
+        font-size: 32px;
+    }
+
+    @media (min-width: 1024px) {
+        font-size: 28px;
+    }
+
+    @media (min-width: 1280px) {
+        font-size: 32px;
+    }
 }
 

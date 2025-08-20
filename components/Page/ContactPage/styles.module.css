@@ -1,0 +1,32 @@
+.container {
+  display: block;
+  
+}
+.contentContainer {
+  display: block;
+  margin: 24px;
+  
+  @media (min-width: 768px) {
+    margin: 48px;
+  }
+  @media (min-width: 1024px) {
+    margin: 48px 64px;
+  }
+  @media (min-width: 1280px) {
+    max-width: 1200px;
+    margin: 48px auto;
+  }
+}
+.title {
+  margin: 32px 0;
+  text-align: center;
+  @media (min-width: 768px) {
+    margin: 32px 0;
+  }
+  @media (min-width: 1024px) {
+    margin: 32px 0;
+  }
+  @media (min-width: 1280px) {
+    margin: 48px 0;
+  }
+}
