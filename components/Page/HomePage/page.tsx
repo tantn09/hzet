@@ -8,7 +8,7 @@ export const HomePage = ({ news, studyAboard, laborExport }: any) => {
       <HPHero />
       <HPContent />
       <HPCard title="Xuất Khẩu Lao Động" isDarkBackground={true} data={laborExport} linkTo="labor-export"/>
-      <HPCard title="Du Học" data={studyAboard} linkTo="study-aboard"/>
+      <HPCard title="Du Học" data={studyAboard} linkTo="study-abroad"/>
       <HPCard title="Tin Tức" isDarkBackground={true} data={news} linkTo="news"/>
     </div>
   );

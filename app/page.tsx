@@ -2,6 +2,8 @@ import { HomePage } from "@/components/Page/HomePage/page";
 import client from "@/lib/contentful";
 import HomeLayout from "./home.layout";
 
+export const revalidate = 60; // 60 giây
+
 export default async function Home() {
   const newsctf = await client.getEntries({
     content_type: "post",
