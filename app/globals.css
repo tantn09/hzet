@@ -71,4 +71,21 @@ h3 {
     font-size: 42px;
   }
 }
+/* contacts */
+.contacts {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
 
+  display: flex;
+  flex-direction: column;
+  gap: 10px;;
+}
+@keyframes zoom {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); } /* zoom to 110% */
+}
+.contactIcon {
+  display: inline-block;
+  animation: zoom 0.5s ease-in-out infinite;
+}
