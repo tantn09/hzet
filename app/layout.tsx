@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className={`${raleway.className} antialiased`}>
         <main>{children}</main>
         <div className="contacts">
-          <Link href="https://bit.ly/4n04Mvk">
+          <Link href="https://zalo.me/0969513236" target="_blank">
             <Image
               src={"/icon/zalo.svg"}
               width={50}
@@ -34,7 +34,7 @@ export default function RootLayout({
               className="contactIcon"
             />
           </Link>
-          <Link href="https://bit.ly/4mZJk9B">
+          <Link href="https://www.facebook.com/Akisoso241003" target="_blank">
             <Image
               src={"/icon/messenger.svg"}
               width={50}
