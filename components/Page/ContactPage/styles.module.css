@@ -1,11 +1,10 @@
 .container {
   display: block;
-  
 }
 .contentContainer {
   display: block;
   margin: 24px;
-  
+
   @media (min-width: 768px) {
     margin: 48px;
   }
@@ -14,7 +13,7 @@
   }
   @media (min-width: 1280px) {
     max-width: 1200px;
-    margin: 48px auto;
+    margin: 64px auto;
   }
 }
 .title {
@@ -24,9 +23,21 @@
     margin: 32px 0;
   }
   @media (min-width: 1024px) {
-    margin: 32px 0;
+    margin: 48px 0;
   }
   @media (min-width: 1280px) {
-    margin: 48px 0;
+    margin: 64px 0;
+  }
+}
+.information{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+  @media (min-width: 768px) {
+    margin-bottom: 48px;
+  }
+  @media (min-width: 1280px) {
+    margin-bottom: 64px;
   }
 }
