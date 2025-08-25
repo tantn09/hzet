@@ -1,0 +1,33 @@
+.navigation {
+  z-index: 9;
+  background-color: #000;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+}
+.container {
+  padding: 24px;
+  height: 100%;
+}
+.controller {
+  position: absolute;
+  right: 24px;
+  @media (min-width: 768px) {
+    right: 48px;
+  }
+}
+.navBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  height: 100%;
+}
+.navBarItem {
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 26px;
+}

@@ -1,13 +1,16 @@
-'use client';
+"use client";
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { NAVBAR } from "@/helper/constant";
+import MobileNav from "../MobileNav/page";
 
 export default function HomeHeader() {
   const [scrolled, setScrolled] = useState(false);
+  const [isOpenMobileNav, setOpenMobileNav] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -15,12 +18,23 @@ export default function HomeHeader() {
       setScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (isOpenMobileNav) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [isOpenMobileNav]);
+
   return (
-    <div className={styles.container} style={{ backgroundColor: scrolled ? "#000000e6" : "transparent" }}>
+    <div
+      className={styles.container}
+      style={{ backgroundColor: scrolled ? "#000000e6" : "transparent" }}
+    >
       <div className={styles.headerContainer}>
         <div className={styles.logo} onClick={() => router.push("/")}>
           <Image
@@ -34,9 +48,12 @@ export default function HomeHeader() {
           />
           <div className={styles.brandName}>HZET GLOBAL</div>
         </div>
-        <div className={styles.navBarM}>
+        <div
+          className={styles.navBarM}
+          onClick={() => setOpenMobileNav(!isOpenMobileNav)}
+        >
           <Image
-            src="/icon/menu.svg"
+            src={"/icon/menu.svg"}
             alt="Logo"
             width={50}
             height={50}
@@ -45,13 +62,16 @@ export default function HomeHeader() {
           />
         </div>
         <div className={styles.navBar}>
-          <Link href={"/about"}className={styles.navBarItem}>Giới Thiệu</Link>
-          <Link href={"/labor-export"}className={styles.navBarItem}>Xuất Khẩu Lao Động</Link>
-          <Link href={"/study-abroad"}className={styles.navBarItem}>Du Học</Link>
-          <Link href={"/news"}className={styles.navBarItem}>Tin Tức</Link>
-          <Link href={"/contact"}className={styles.navBarItem}>Liên Hệ</Link>
+          {NAVBAR.map((item: any, index: number) => (
+            <Link key={index} href={item.href} className={styles.navBarItem}>
+              {item.label}
+            </Link>
+          ))}
         </div>
       </div>
+      {isOpenMobileNav ? (
+        <MobileNav onHanleCloseBtn={()=> setOpenMobileNav(false)} />
+      ) : null}
     </div>
   );
 }
