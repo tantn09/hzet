@@ -7,10 +7,8 @@ export default function Cards({ headerTitle, data }: any) {
         <h2 className={`${styles.title} title`}>{headerTitle}</h2>
         <div className={styles.cardsContainer}>
           {data.map((item: any, index: Number) => {
-            const { thumbnail, title, slug } = item?.fields;
-            const image = "https:" + thumbnail?.fields?.file?.url;
             return (
-              <CardItem key={index} image={image} title={title} slug={slug} />
+              <CardItem key={index} data={item?.fields} />
             );
           })}
         </div>
