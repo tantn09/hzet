@@ -1,0 +1,38 @@
+{
+  "navBar": {
+    "about": "Giới Thiệu",
+    "laborExport": "Xuất Khẩu Lao Động",
+    "studyAbroad": "Du Học",
+    "news": "Tin Tức",
+    "contact": "Liên Hệ"
+  },
+  "footer": {
+    "brand": "HZET GLOBAL",
+    "address": "Tầng 06 - nhà số 208 Thượng Đình - Phường Khương Đình - Hà Nội",
+    "phone": "+84969513236 (zalo, viber, whatsapp)",
+    "email": "hzetglobal@gmail.com",
+    "fbLink": "https://www.facebook.com/Akisoso241003",
+    "youtubeLink": "https://www.youtube.com",
+    "zaloLink": "https://zalo.me/0969513236"
+  },
+  "homePage": {
+    "hero": {
+      "title": "HZET GLOBAL",
+      "subTitle": "CÔNG TY TNHH HZET GLOBAL KẾT NỐI NHÂN LỰC VIỆT VỚI THẾ GIỚI",
+      "description": "Chuyên xuất khẩu lao động và tư vấn du học, kết nối nhân lực Việt Nam với cơ hội làm việc và học tập tại nhiều quốc gia khác. Chúng tôi cam kết dịch vụ uy tín, minh bạch và chi phí hợp lý, đồng hành cùng khách hàng trên hành trình vươn ra thế giới."
+    },
+    "contents": {
+      "title1": "TẦM NHÌN",
+      "content1": "Cung ứng nguồn lao động chất lượng, đa dạng cho thị các thị trường nước ngoài. \nKhẳng định vị thế là công ty Cung ứng lao động và du học hàng đầu Việt Nam.\nLuôn hướng đến mục tiêu phát triển bền vững.\nLà sự lựa chọn hàng đầu cho các đối tác và người lao động.",
+      "title2": "SỨ MỆNH",
+      "content2": "Thay đổi quan niệm về xuất khẩu lao động cho người dân Việt.\nĐịnh hướng nghề nghiệp cho nguồn nhân lực trẻ Việt Nam. \nMang lại cơ hội thay đổi tương lai cho người lao động Việt Nam. \nKết nối và hợp tác với các đối tác lớn, uy tín nhất tại các nước.",
+      "title3": "GIÁ TRỊ CỐT LÕI",
+      "content3": "Người lao động là tài sản quan trọng nhất và là nguồn sức mạnh của HZET.\nĐoàn kết là yếu tố quyết định khi xây dựng một doanh nghiệp bền vững.\nSự uy tín là nền tảng cho mọi hoạt động của công ty.\nChất lượng làm cam kết với đối tác và người lao động"
+    },
+    "cards": {
+      "cardTitle1": "Xuất Khẩu Lao Động",
+      "cardTitle2": "Du Học",
+      "cardTitle3": "Tin Tức"
+    }
+  }
+}

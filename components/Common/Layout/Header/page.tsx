@@ -1,16 +1,18 @@
 "use client";
 
-import Image from "next/image";
-import styles from "./styles.module.css";
-import { useRouter } from "next/navigation";
-import Link from "next/link";
 import { NAVBAR } from "@/helper/constant";
+import { useTranslations } from "next-intl";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import MobileNav from "../MobileNav/page";
+import styles from "./styles.module.css";
 
 export default function Header() {
   const [isOpenMobileNav, setOpenMobileNav] = useState(false);
   const router = useRouter();
+  const t = useTranslations("navBar");
   useEffect(() => {
     if (isOpenMobileNav) {
       document.body.style.overflow = "hidden";
@@ -49,7 +51,7 @@ export default function Header() {
         <div className={styles.navBar}>
           {NAVBAR.map((item: any, index: number) => (
             <Link key={index} href={item.href} className={styles.navBarItem}>
-              {item.label}
+              {t(item.key)}
             </Link>
           ))}
         </div>

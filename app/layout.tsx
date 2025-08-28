@@ -3,7 +3,7 @@ import { Raleway } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
 import Link from "next/link";
-
+import { NextIntlClientProvider } from "next-intl";
 const raleway = Raleway({
   subsets: ["latin", "vietnamese"], // hỗ trợ tiếng Việt
   weight: ["400", "500", "600", "700"], // các độ dày cần dùng
@@ -23,7 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${raleway.className} antialiased`}>
-        <main>{children}</main>
+        <main>
+          <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        </main>
         <div className="contacts">
           <Link href="https://zalo.me/0969513236" target="_blank">
             <Image

@@ -7,11 +7,13 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { NAVBAR } from "@/helper/constant";
 import MobileNav from "../MobileNav/page";
+import { useTranslations } from "next-intl";
 
 export default function HomeHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [isOpenMobileNav, setOpenMobileNav] = useState(false);
   const router = useRouter();
+  const t = useTranslations("navBar");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,7 +66,7 @@ export default function HomeHeader() {
         <div className={styles.navBar}>
           {NAVBAR.map((item: any, index: number) => (
             <Link key={index} href={item.href} className={styles.navBarItem}>
-              {item.label}
+              {t(item.key)}
             </Link>
           ))}
         </div>

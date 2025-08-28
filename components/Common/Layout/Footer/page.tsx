@@ -1,12 +1,15 @@
 import Image from "next/image";
 import styles from "./styles.module.css";
+import { useTranslations } from "next-intl";
+import Link from "next/link";
 export default function Footer() {
+  const t = useTranslations("footer");
   return (
     <div className={styles.container}>
       <div className={styles.footerContainer}>
         <div className={styles.block}>
           <div className={styles.blockItem}>
-            <div className={styles.brandName}>HZET GLOBAL</div>
+            <div className={styles.brandName}>{t("brand")}</div>
           </div>
           <div className={styles.blockItem}>
             <Image
@@ -15,17 +18,15 @@ export default function Footer() {
               height={20}
               alt="Address"
             />
-            <span>
-              Địa Chỉ: Tầng 06 - nhà số 208 Thượng Đình - Phường Khương Đình - Hà Nội
-            </span>
+            <span>Địa Chỉ: {t("address")}</span>
           </div>
           <div className={styles.blockItem}>
             <Image src="/icon/phone.svg" width={20} height={20} alt="Phone" />
-            <span>Số Điện Thoại: +84969513236 (zalo, viber, whatsapp)</span>
+            <span>Số Điện Thoại: {t("phone")}</span>
           </div>
           <div className={styles.blockItem}>
             <Image src="/icon/email.svg" width={20} height={20} alt="Email" />
-            <span>Email: hzetglobal@gmail.com</span>
+            <span>Email: {t("email")}</span>
           </div>
         </div>
         <hr className={styles.divider} />
@@ -33,23 +34,29 @@ export default function Footer() {
           <div className={styles.blockItem}>Kết nối với chúng tôi:</div>
           <div className={styles.blockItem}>
             <div>
-              <Image src="/icon/fb.svg" width={25} height={25} alt="Facebook" />
+              <Link href={t("fbLink")}>
+                <Image
+                  src="/icon/fb.svg"
+                  width={25}
+                  height={25}
+                  alt="Facebook"
+                />
+              </Link>
             </div>
             <div>
-              <Image
-                src="/icon/tiktok.svg"
-                width={25}
-                height={25}
-                alt="Tiktok"
-              />
+              <Link href={t("zaloLink")}>
+                <Image src="/icon/zalo.svg" width={25} height={25} alt="zalo" />
+              </Link>
             </div>
             <div>
-              <Image
-                src="/icon/youtube.svg"
-                width={25}
-                height={25}
-                alt="Youtube"
-              />
+              <Link href={t("youtubeLink")}>
+                <Image
+                  src="/icon/youtube.svg"
+                  width={25}
+                  height={25}
+                  alt="Youtube"
+                />
+              </Link>
             </div>
           </div>
         </div>
