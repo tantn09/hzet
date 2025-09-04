@@ -12,7 +12,7 @@ const raleway = Raleway({
 
 export const metadata: Metadata = {
   title: "Hzet Global",
-  description: "Tư Vấn Xuất Khẩu Lao Động và Du Học",
+  description: "Tư Vấn Cung Ứng Lao Động và Du Học",
 };
 
 export default function RootLayout({
