@@ -1,7 +1,7 @@
 {
   "navBar": {
     "about": "Giới Thiệu",
-    "laborExport": "Xuất Khẩu Lao Động",
+    "laborExport": "Cung ứng lao động",
     "studyAbroad": "Du Học",
     "news": "Tin Tức",
     "contact": "Liên Hệ"
@@ -30,7 +30,7 @@
       "content3": "Người lao động là tài sản quan trọng nhất và là nguồn sức mạnh của HZET.\nĐoàn kết là yếu tố quyết định khi xây dựng một doanh nghiệp bền vững.\nSự uy tín là nền tảng cho mọi hoạt động của công ty.\nChất lượng làm cam kết với đối tác và người lao động"
     },
     "cards": {
-      "cardTitle1": "Xuất Khẩu Lao Động",
+      "cardTitle1": "Cung ứng lao động",
       "cardTitle2": "Du Học",
       "cardTitle3": "Tin Tức"
     }
