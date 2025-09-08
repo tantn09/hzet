@@ -12,16 +12,16 @@ export default function AboutPage() {
         <h1>{t("title1")}</h1>
         <p>{t("content1")}</p>
         <h1>{t("title2")}</h1>
-        {content2.map((content) => (
-          <p>• {content}</p>
+        {content2.map((content, index) => (
+          <p key={index}>• {content}</p>
         ))}
         <h1>{t("title3")}</h1>
-        {content3.map((content) => (
-          <p>• {content}</p>
+        {content3.map((content, index) => (
+          <p key={index}>• {content}</p>
         ))}
         <h1>{t("title4")}</h1>
-        {content4.map((content) => (
-          <p>• {content}</p>
+        {content4.map((content, index) => (
+          <p key={index}>• {content}</p>
         ))}
       </div>
     </div>
