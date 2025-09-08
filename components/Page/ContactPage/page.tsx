@@ -1,5 +1,7 @@
+import { useTranslations } from "next-intl";
 import styles from "./styles.module.css";
 export default function ContactPage() {
+  const t = useTranslations("footer");
   return (
     <div className={styles.container}>
       <div className={styles.contentContainer}>
@@ -7,17 +9,16 @@ export default function ContactPage() {
         <h3>Thông tin công ty</h3>
         <div className={styles.information}>
           <p>
-            <strong>Tên Công Ty:</strong> HZET GLOBAL
+            <strong>Tên Công Ty:</strong> {t("brand")}
           </p>
           <p>
-            <strong>Địa Chỉ:</strong> Tầng 06 - nhà số 208 Thượng Đình - Phường
-            Khương Đình - Hà Nội
+            <strong>Địa Chỉ:</strong> {t("address")}
           </p>
           <p>
-            <strong>Số Điện Thoại:</strong> +84969513236 (zalo, viber, whatsapp)
+            <strong>Số Điện Thoại:</strong> {t("phone")}
           </p>
           <p>
-            <strong>Email:</strong> hzetglobal@gmail.com
+            <strong>Email:</strong> {t("email")}
           </p>
         </div>
         <div>
