@@ -19,36 +19,52 @@ p {
   }
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 0.5em;
+}
+
+h1 {
+  font-size: 42px;
+  @media (min-width: 768px) { font-size: 48px; }
+  @media (min-width: 1024px) { font-size: 54px; }
+  @media (min-width: 1280px) { font-size: 60px; }
+}
+
 h2 {
   font-size: 36px;
-  font-weight: 600;
-  @media (min-width: 768px) {
-    font-size: 38px;
-  }
-
-  @media (min-width: 1024px) {
-    font-size: 40px;
-  }
-
-  @media (min-width: 1280px) {
-    font-size: 42px;
-  }
+  @media (min-width: 768px) { font-size: 38px; }
+  @media (min-width: 1024px) { font-size: 40px; }
+  @media (min-width: 1280px) { font-size: 42px; }
 }
 
 h3 {
   font-size: 32px;
-  font-weight: 600;
-  @media (min-width: 768px) {
-    font-size: 34px;
-  }
+  @media (min-width: 768px) { font-size: 34px; }
+  @media (min-width: 1024px) { font-size: 36px; }
+  @media (min-width: 1280px) { font-size: 38px; }
+}
 
-  @media (min-width: 1024px) {
-    font-size: 36px;
-  }
+h4 {
+  font-size: 28px;
+  @media (min-width: 768px) { font-size: 30px; }
+  @media (min-width: 1024px) { font-size: 32px; }
+  @media (min-width: 1280px) { font-size: 34px; }
+}
 
-  @media (min-width: 1280px) {
-    font-size: 38px;
-  }
+h5 {
+  font-size: 24px;
+  @media (min-width: 768px) { font-size: 26px; }
+  @media (min-width: 1024px) { font-size: 28px; }
+  @media (min-width: 1280px) { font-size: 30px; }
+}
+
+h6 {
+  font-size: 20px;
+  @media (min-width: 768px) { font-size: 22px; }
+  @media (min-width: 1024px) { font-size: 24px; }
+  @media (min-width: 1280px) { font-size: 26px; }
 }
 
 .title {
