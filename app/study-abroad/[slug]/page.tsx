@@ -1,5 +1,6 @@
 import PostDetail from "@/components/Common/PostDetail/page";
-import client from "@/lib/contentful";
+import { getCtfClient } from "@/lib/contentful";
+import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 
 type Props = {
@@ -7,6 +8,8 @@ type Props = {
 };
 
 export default async function StudyAbroadtDetail({ params }: Props) {
+  const { isEnabled } = await draftMode();
+  const client = getCtfClient({ isPreview: isEnabled });
   const { slug } = await params;
   const url = "/study-abroad/" + slug;
   const newsctf = await client.getEntries({

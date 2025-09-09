@@ -3,6 +3,7 @@ import styles from "./styles.module.css";
 import Link from "next/link";
 import { truncateString } from "@/helper/utils/string.utils";
 export default function CardItem({ data }: any) {
+  
   const {
     title,
     thumbnail,

@@ -1,8 +1,16 @@
-import { createClient } from 'contentful';
+import { createClient } from "contentful";
 
-const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID!,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
-});
+const baseCfg = {
+  space: process.env.CONTENTFUL_SPACE_ID!,
+  environment: process.env.CONTENTFUL_ENVIRONMENT || "master",
+};
 
-export default client;
+export function getCtfClient({ isPreview = false } = {}) {
+  return createClient({
+    ...baseCfg,
+    host: isPreview ? "preview.contentful.com" : "cdn.contentful.com",
+    accessToken: isPreview
+      ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN!
+      : process.env.CONTENTFUL_ACCESS_TOKEN!,
+  });
+}

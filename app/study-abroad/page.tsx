@@ -1,9 +1,12 @@
 import Cards from "@/components/Common/Cards/page";
-import client from "@/lib/contentful";
+import { getCtfClient } from "@/lib/contentful";
+import { draftMode } from "next/headers";
 
 export const revalidate = 300; // 5m
 
 export default async function StudyAbroad() {
+  const { isEnabled } = await draftMode();
+  const client = getCtfClient({ isPreview: isEnabled })
   const studyAbroadctf = await client.getEntries({
     content_type: "post",
     "fields.page": "study-abroad",

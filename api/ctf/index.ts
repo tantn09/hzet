@@ -1,6 +1,9 @@
-import client from "@/lib/contentful";
+import { getCtfClient } from "@/lib/contentful";
+import { draftMode } from "next/headers";
 
 export async function getPostsPage(type = "news", page = 1, pageSize = 12) {
+  const { isEnabled } = await draftMode(); 
+  const client = getCtfClient({ isPreview: isEnabled })
   const limit = Math.min(pageSize, 100);
   const skip = (Math.max(page, 1) - 1) * limit;
 

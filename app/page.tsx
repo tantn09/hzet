@@ -1,10 +1,12 @@
 import { HomePage } from "@/components/Page/HomePage/page";
-import client from "@/lib/contentful";
+
+import { getCtfClient } from "@/lib/contentful";
 import HomeLayout from "./home.layout";
 
-export const revalidate = 300 ; // 5m
+export const revalidate = 300; // 5m
 
 export default async function Home() {
+  const client = getCtfClient({ isPreview: false });
   const newsctf = await client.getEntries({
     content_type: "post",
     "fields.page": "news",
