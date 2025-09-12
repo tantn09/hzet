@@ -25,7 +25,7 @@ export default function Header() {
       <div className={styles.headerContainer}>
         <div className={styles.logo} onClick={() => router.push("/")}>
           <Image
-            src="/images/logo1.jpg"
+            src="/images/logo.svg"
             className={styles.logoImg}
             alt="Logo"
             width={80}
