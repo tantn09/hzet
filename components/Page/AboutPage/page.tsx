@@ -9,20 +9,29 @@ export default function AboutPage() {
   return (
     <div className={styles.container}>
       <div className={styles.aboutContainer}>
-        <h1>{t("title1")}</h1>
-        <p>{t("content1")}</p>
-        <h1>{t("title2")}</h1>
-        {content2.map((content, index) => (
-          <p key={index}>• {content}</p>
-        ))}
-        <h1>{t("title3")}</h1>
-        {content3.map((content, index) => (
-          <p key={index}>• {content}</p>
-        ))}
-        <h1>{t("title4")}</h1>
-        {content4.map((content, index) => (
-          <p key={index}>• {content}</p>
-        ))}
+        <div>
+          <h4>{t("title1")}</h4>
+          <p>{t("content1")}</p>
+        </div>
+        <div>
+          <h4>{t("title2")}</h4>
+          {content2.map((content, index) => (
+            <p key={index}>• {content}</p>
+          ))}
+        </div>
+        <div>
+          {" "}
+          <h4>{t("title3")}</h4>
+          {content3.map((content, index) => (
+            <p key={index}>• {content}</p>
+          ))}
+        </div>
+        <div>
+          <h4>{t("title4")}</h4>
+          {content4.map((content, index) => (
+            <p key={index}>• {content}</p>
+          ))}
+        </div>
       </div>
     </div>
   );
