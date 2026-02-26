@@ -1,4 +1,4 @@
-import { HomePage } from "@/components/Page/HomePage/page";
+import { HomePage } from "@/components/page/hom-page";
 
 import { getCtfClient } from "@/lib/contentful";
 

@@ -1,4 +1,4 @@
-import CardItem from "@/components/Common/CardItem/page";
+import CardItem from "@/components/common/card-item";
 export default function Cards({ headerTitle, data }: any) {
   return (
     <section className="py-12">

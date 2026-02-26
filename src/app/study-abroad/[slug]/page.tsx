@@ -1,4 +1,4 @@
-import PostDetail from "@/components/Common/PostDetail/page";
+import PostDetail from "@/components/common/post-detail";
 import { getCtfClient } from "@/lib/contentful";
 import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";

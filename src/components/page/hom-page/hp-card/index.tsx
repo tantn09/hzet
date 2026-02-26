@@ -1,5 +1,5 @@
 import Link from "next/link";
-import CardItem from "@/components/Common/CardItem/page";
+import CardItem from "@/components/common/card-item";
 type HPCardProps = {
   title: string;
   isDarkBackground?: boolean;

@@ -1,4 +1,4 @@
-import RichText from "@/components/Common/RichText/page";
+import RichText from "@/components/common/rich-text";
 export default function PostDetail({ data }: any) {
   const { title, content }: any = data;
   return (

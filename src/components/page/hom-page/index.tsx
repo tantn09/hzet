@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
-import { HPCard } from "./HPCard/page";
-import { HPContent } from "./HPContent/page";
-import { HPHero } from "./HPHero/page";
+import { HPCard } from "./hp-card";
+import { HPContent } from "./hp-content";
+import { HPHero } from "./hp-hero";
 export const HomePage = ({ news, studyAboard, laborExport }: any) => {
   const t = useTranslations("homePage.cards");
   return (

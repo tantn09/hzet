@@ -1,4 +1,4 @@
-import Cards from "@/components/Common/Cards/page";
+import Cards from "@/components/common/cards";
 import { getCtfClient } from "@/lib/contentful";
 import { draftMode } from "next/headers";
 
