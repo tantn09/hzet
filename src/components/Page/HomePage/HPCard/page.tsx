@@ -17,7 +17,9 @@ export const HPCard = ({
       className={`py-14 ${isDarkBackground ? "bg-slate-900 text-white" : "bg-slate-50 text-slate-900"}`}
     >
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
-        <div className="mb-6 text-2xl font-bold sm:text-3xl">{title}</div>
+        <div className={`typo-h2 mb-6 ${isDarkBackground ? "text-white" : "text-slate-900"}`}>
+          {title}
+        </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {data.map((item: any) => {
             return (

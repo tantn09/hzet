@@ -4,9 +4,9 @@ export default function ContactPage() {
   return (
     <section className="py-10">
       <div className="mx-auto w-full max-w-6xl space-y-6 px-4 sm:px-6">
-        <h2 className="text-3xl font-bold text-slate-900">Lien He</h2>
-        <h3 className="text-xl font-semibold text-slate-800">Thong tin cong ty</h3>
-        <div className="space-y-2 rounded-xl border border-slate-200 bg-white p-6 text-slate-700 shadow-sm">
+        <h2 className="typo-h1 text-slate-900">Lien He</h2>
+        <h3 className="typo-h3 text-slate-800">Thong tin cong ty</h3>
+        <div className="typo-body space-y-2 rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
           <p>
             <strong>Tên Công Ty:</strong> {t("brand")}
           </p>

@@ -26,13 +26,13 @@ export default function CardItem({ data }: any) {
         alt="image"
       />
       <div className="space-y-3 p-4">
-        <div className="text-lg font-semibold leading-snug text-slate-900">
+        <div className="typo-h3 text-slate-900">
           {truncateString(title, 75)}
         </div>
         {isShow && (
           <div className="flex flex-wrap gap-x-4 gap-y-2">
             {quantity && (
-              <div className="flex items-center gap-2 text-sm text-slate-600">
+              <div className="typo-body-sm flex items-center gap-2">
                 <Image
                   src={"/icon/quantity.svg"}
                   width={20}
@@ -43,7 +43,7 @@ export default function CardItem({ data }: any) {
               </div>
             )}
             {location && (
-              <div className="flex items-center gap-2 text-sm text-slate-600">
+              <div className="typo-body-sm flex items-center gap-2">
                 <Image
                   src={"/icon/location.svg"}
                   width={20}
@@ -54,7 +54,7 @@ export default function CardItem({ data }: any) {
               </div>
             )}
             {salary && (
-              <div className="flex items-center gap-2 text-sm text-slate-600">
+              <div className="typo-body-sm flex items-center gap-2">
                 <Image
                   src={"/icon/salary.svg"}
                   width={20}
@@ -69,7 +69,7 @@ export default function CardItem({ data }: any) {
         {shortDescription && (
           <>
             <hr className="border-slate-200" />
-            <div className="text-sm leading-relaxed text-slate-600">
+            <div className="typo-body-sm">
               {truncateString(shortDescription, 110)}
             </div>
           </>

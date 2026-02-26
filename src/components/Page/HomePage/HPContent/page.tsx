@@ -37,14 +37,14 @@ export const HPContent = () => {
               }`}
             >
               <div className="w-full md:w-1/2">
-                <div className="mb-4 text-2xl font-bold text-slate-900">
+                <div className="typo-h2 mb-4 text-slate-900">
                   <span>{content.title}</span>
                 </div>
                 <div className="space-y-2">
                   {descriptions.map((des) => (
                     <p
                       key={`${content.title}-${des}`}
-                      className="leading-relaxed text-slate-700"
+                      className="typo-body"
                     >
                       • {des}
                     </p>
