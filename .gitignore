@@ -1,46 +1,42 @@
-# Node modules
-node_modules/
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# Output
-.next/
-out/
-dist/
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
 
-# System files
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
 .DS_Store
-Thumbs.db
+*.pem
 
-# Logs
+# debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
+.pnpm-debug.log*
 
-# Env files
-.env
-.env.*.local
+# env files (can opt-in for committing if needed)
+.env*
+!.env.example
 
-# Editor configs
-.vscode/
-.idea/
+# vercel
+.vercel
 
-# Build cache
-.cache/
-.next/cache/
-
-# Tailwind JIT
-tailwind.config.js.backup
-
-# Optional: OS-specific
-*.swp
-*.swo
-
-# Local SSL certs (optional)
-*.pem
-*.key
-
-# MacOS Finder files
-*.DS_Store
-
-# VS Code settings
-.vscode/
+# typescript
+*.tsbuildinfo
+next-env.d.ts
