@@ -1,19 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Be_Vietnam_Pro } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 import "./globals.css";
+import { FloatingContact } from "@/components/common/floating-contact";
 import Header from "@/components/common/layout/header";
 import Footer from "@/components/common/layout/footer";
+import { ScrollProgress } from "@/components/common/scroll-progress";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const beVietnamPro = Be_Vietnam_Pro({
+  variable: "--font-be-vietnam-pro",
+  subsets: ["latin", "vietnamese"],
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -32,12 +30,14 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${beVietnamPro.variable} antialiased`}
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
+          <ScrollProgress />
           <Header />
           <main>{children}</main>
           <Footer />
+          <FloatingContact />
         </NextIntlClientProvider>
       </body>
     </html>

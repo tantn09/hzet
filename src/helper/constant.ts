@@ -16,6 +16,5 @@ export const NAVBAR: NavItem[] = [
     ],
   },
   { href: "/labor-export", key: "laborExport" },
-  { href: "/news", key: "news" },
   { href: "/contact", key: "contact" },
 ];
