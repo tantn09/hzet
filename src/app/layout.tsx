@@ -16,7 +16,7 @@ const beVietnamPro = Be_Vietnam_Pro({
 
 export const metadata: Metadata = {
   title: "HZET GLOBAL",
-  description: "HZET GLOBAL",
+  description: "HZET Global – Chuyên tư vấn du học Nhật Bản, Hàn Quốc, Úc và cung ứng nhân lực quốc tế. Dịch vụ uy tín, minh bạch, đồng hành cùng bạn trên hành trình vươn ra thế giới.",
 };
 
 export default async function RootLayout({

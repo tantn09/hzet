@@ -21,10 +21,10 @@ type Props = {
 
 const options: Options = {
   renderMark: {
-    [MARKS.BOLD]: (text) => <strong>{text}</strong>,
+    [MARKS.BOLD]: (text) => <strong className="font-semibold text-slate-900">{text}</strong>,
     [MARKS.ITALIC]: (text) => <em>{text}</em>,
     [MARKS.CODE]: (text) => (
-      <code className="rounded-md bg-slate-100 px-1.5 py-0.5 font-mono text-[0.9em]">
+      <code className="rounded-md bg-slate-100 px-1.5 py-0.5 font-mono text-[0.875em] text-slate-800">
         {text}
       </code>
     ),
@@ -32,36 +32,42 @@ const options: Options = {
 
   renderNode: {
     [BLOCKS.HEADING_1]: (_node: Node, children: React.ReactNode) => (
-      <h1 className="typo-h1 mt-8 mb-3">{children}</h1>
+      <h1 className="mt-10 mb-4 text-2xl font-bold leading-tight tracking-tight text-slate-900 sm:text-3xl">
+        {children}
+      </h1>
     ),
     [BLOCKS.HEADING_2]: (_node: Node, children: React.ReactNode) => (
-      <h2 className="typo-h2 mt-8 mb-3">{children}</h2>
+      <h2 className="mt-8 mb-3 text-xl font-bold leading-tight tracking-tight text-slate-900 sm:text-2xl">
+        {children}
+      </h2>
     ),
     [BLOCKS.HEADING_3]: (_node: Node, children: React.ReactNode) => (
-      <h3 className="typo-h3 mt-6 mb-3">{children}</h3>
+      <h3 className="mt-6 mb-3 text-lg font-semibold leading-snug text-slate-800 sm:text-xl">
+        {children}
+      </h3>
     ),
     [BLOCKS.PARAGRAPH]: (_node: Node, children: React.ReactNode) => (
-      <p className="typo-body my-3">{children}</p>
+      <p className="text-[15px] leading-7 text-slate-600">{children}</p>
     ),
     [BLOCKS.QUOTE]: (_node: Node, children: React.ReactNode) => (
-      <blockquote className="my-4 border-l-4 border-blue-500 bg-blue-50 py-3 pl-4 italic text-blue-900">
+      <blockquote className="my-5 rounded-r-xl border-l-4 border-blue-500 bg-blue-50/70 py-4 pr-4 pl-5 text-[15px] italic text-blue-900">
         {children}
       </blockquote>
     ),
     [BLOCKS.UL_LIST]: (_node: Node, children: React.ReactNode) => (
-      <ul className="my-3 list-disc pl-6">{children}</ul>
+      <ul className="my-4 space-y-1.5 pl-5 marker:text-slate-400">{children}</ul>
     ),
     [BLOCKS.OL_LIST]: (_node: Node, children: React.ReactNode) => (
-      <ol className="my-3 list-decimal pl-6">{children}</ol>
+      <ol className="my-4 space-y-1.5 pl-5 list-decimal marker:text-slate-400">{children}</ol>
     ),
     [BLOCKS.LIST_ITEM]: (_node: Node, children: React.ReactNode) => (
-      <li className="typo-body my-1">{children}</li>
+      <li className="text-[15px] leading-7 text-slate-600 pl-1">{children}</li>
     ),
-    [BLOCKS.HR]: () => <hr className="my-5 border-slate-200" />,
+    [BLOCKS.HR]: () => <hr className="my-8 border-slate-200" />,
     [BLOCKS.EMBEDDED_ENTRY]: (node) => {
       return (
         <iframe
-          className="my-4 w-full overflow-hidden rounded-xl"
+          className="my-6 w-full overflow-hidden rounded-2xl shadow-sm"
           height="400"
           src={node.data.target.fields.videoUrl}
           title={node.data.target.fields.title}
@@ -81,13 +87,20 @@ const options: Options = {
 
       if (asset.file.contentType?.includes("image")) {
         return (
-          <Image
-            width={400}
-            height={400}
-            src={url}
-            alt={title}
-            className="my-4 h-auto w-full max-w-full rounded-xl"
-          />
+          <figure className="my-6">
+            <Image
+              width={800}
+              height={500}
+              src={url}
+              alt={title}
+              className="h-auto w-full rounded-2xl shadow-sm"
+            />
+            {title && (
+              <figcaption className="mt-2 text-center text-xs text-slate-400">
+                {title}
+              </figcaption>
+            )}
+          </figure>
         );
       }
 
@@ -96,7 +109,7 @@ const options: Options = {
         url.includes("youtube")
       ) {
         return (
-          <div className="ctf-video my-4 overflow-hidden rounded-xl">
+          <div className="ctf-video my-6 overflow-hidden rounded-2xl shadow-sm">
             <iframe
               src={url}
               title={title}
@@ -117,7 +130,7 @@ const options: Options = {
           href={url}
           target="_blank"
           rel="noopener noreferrer"
-          className="typo-link"
+          className="text-blue-600 underline decoration-blue-300/50 underline-offset-[3px] transition-colors hover:text-blue-700 hover:decoration-blue-400"
         >
           {children}
         </a>
@@ -128,7 +141,7 @@ const options: Options = {
 
 export default function RichText({ content }: Readonly<Props>) {
   return (
-    <div className="typo-prose">
+    <div className="space-y-4">
       {documentToReactComponents(content, options)}
     </div>
   );

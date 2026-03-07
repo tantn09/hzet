@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowUp, Phone } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -8,6 +9,7 @@ const PHONE_NUMBER = "0969513236";
 const ZALO_LINK = "https://zalo.me/0969513236";
 
 export function FloatingContact() {
+  const t = useTranslations("common");
   const [ready, setReady] = useState(false);
   const [showTop, setShowTop] = useState(false);
 
@@ -45,7 +47,7 @@ export function FloatingContact() {
         href={ZALO_LINK}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Chat Zalo"
+        aria-label={t("chatZalo")}
         className="group relative flex size-11 items-center justify-center rounded-full shadow-lg shadow-blue-500/25 transition-transform duration-300 hover:scale-110"
       >
         <span className="absolute inset-0 animate-ping rounded-full bg-[#0068FF]/30" />
@@ -57,14 +59,14 @@ export function FloatingContact() {
           className="relative z-10 size-11 rounded-full"
         />
         <span className="pointer-events-none absolute right-full mr-3 whitespace-nowrap rounded-lg bg-slate-900 px-3 py-1.5 text-xs font-medium text-white opacity-0 shadow-lg transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 translate-x-2">
-          Chat Zalo
+          {t("chatZalo")}
         </span>
       </a>
 
       {/* Phone */}
       <a
         href={`tel:${PHONE_NUMBER}`}
-        aria-label="Gọi điện"
+        aria-label={t("callUs")}
         className="group relative flex size-11 items-center justify-center rounded-full bg-green-500 shadow-lg shadow-green-500/25 transition-transform duration-300 hover:scale-110"
       >
         <span className="absolute inset-0 animate-ping rounded-full bg-green-500/30" />

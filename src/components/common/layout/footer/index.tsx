@@ -20,31 +20,31 @@ export default function Footer() {
           </div>
           <div className="flex items-center gap-3 text-sm text-slate-400">
             <Clock className="size-4 shrink-0 text-blue-400" />
-            <span>Working Time: 8 giờ sáng - 6 giờ chiều</span>
+            <span>Working Time: {t("workingTime")}</span>
           </div>
         </div>
         <div className="flex-1 space-y-3 border-t border-slate-800 pt-6 md:border-l md:border-t-0 md:pl-8 md:pt-0">
           <div className="text-lg font-bold tracking-wide">
-            CÔNG TY TNHH HZET GLOBAL
+            {t("companyName")}
           </div>
           <div className="text-sm text-slate-400">
-            <span className="font-medium text-slate-300">Trụ sở:</span> Nhà 11A
-            - Khu đô thị The Manor Central Park - Phường Định Công - Hà Nội
+            <span className="font-medium text-slate-300">{t("hq")}:</span>{" "}
+            {t("hqAddress")}
           </div>
           <div className="text-sm text-slate-400">
             <span className="font-medium text-slate-300">
-              Số đăng ký kinh doanh:
+              {t("regNumber")}:
             </span>{" "}
             xxxxxxxxxxxxxxxxxxxx
           </div>
           <div className="text-sm text-slate-400">
-            <span className="font-medium text-slate-300">Ngày cấp:</span>{" "}
+            <span className="font-medium text-slate-300">{t("regDate")}:</span>{" "}
             xx-xx-xxxx
           </div>
         </div>
         <div className="shrink-0 border-t border-slate-800 pt-6 md:border-l md:border-t-0 md:pl-8 md:pt-0 flex flex-col items-center">
           <div className="mb-4 text-sm font-semibold uppercase tracking-wide text-slate-400">
-            Kết nối với chúng tôi
+            {t("connectWithUs")}
           </div>
           <div className="flex items-center gap-2">
             {[

@@ -5,6 +5,7 @@ export type NavItem = {
 };
 
 export const NAVBAR: NavItem[] = [
+  { href: "/", key: "home" },
   { href: "/about", key: "about" },
   {
     href: "/study-abroad",

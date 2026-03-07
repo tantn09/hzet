@@ -13,5 +13,5 @@ export default async function StudyAbroad() {
     include: 1,
   });
   const studyAbroads = studyAbroadctf.items;
-  return <Cards headerTitle="Du Học" data={studyAbroads} />;
+  return <Cards titleKey="studyAbroad" data={studyAbroads} />;
 }

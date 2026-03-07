@@ -76,15 +76,14 @@ export function HPCarousel() {
         <CarouselContent>
           {slides.map((slide, index) => (
             <CarouselItem key={index}>
-              <div className="relative overflow-hidden">
+              <div className="relative aspect-4/3 overflow-hidden md:h-[calc(100vh-60px)] md:aspect-auto">
                 <Image
                   src={slide.image}
                   alt={t(slide.titleKey)}
-                  width={1920}
-                  height={1080}
+                  fill
                   sizes="100vw"
                   className={cn(
-                    "h-auto w-full transition-transform duration-4000 ease-out",
+                    "object-cover transition-transform duration-4000 ease-out",
                     current === index ? "scale-110" : "scale-100"
                   )}
                   priority={index === 0}

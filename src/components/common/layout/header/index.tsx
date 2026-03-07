@@ -26,6 +26,7 @@ import {
   Menu,
   X,
   ChevronDown,
+  Home,
   Building2,
   GraduationCap,
   Briefcase,
@@ -33,6 +34,7 @@ import {
 } from "lucide-react";
 
 const MOBILE_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
+  home: Home,
   about: Building2,
   studyAbroad: GraduationCap,
   laborExport: Briefcase,
@@ -45,6 +47,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const router = useRouter();
   const t = useTranslations("navBar");
+  const tc = useTranslations("common");
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
@@ -62,6 +65,16 @@ export default function Header() {
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-52 gap-0.5 p-2">
+              <li>
+                <NavigationMenuLink asChild>
+                  <Link
+                    href={item.href}
+                    className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-600 transition-colors hover:bg-blue-50/60 hover:text-blue-500"
+                  >
+                    {tc("all")}
+                  </Link>
+                </NavigationMenuLink>
+              </li>
               {item.children.map((child) => (
                 <li key={child.href}>
                   <NavigationMenuLink asChild>
@@ -108,10 +121,7 @@ export default function Header() {
           className="group flex cursor-pointer items-center gap-2.5 transition-all hover:opacity-80"
           onClick={() => router.push("/")}
         >
-          <div className="flex size-8 items-center justify-center rounded-lg bg-linear-to-br from-blue-600 to-cyan-500 shadow-sm shadow-blue-600/20">
-            <span className="text-sm font-black text-white">H</span>
-          </div>
-          <span className="text-[15px] font-bold tracking-tight text-slate-800">
+          <span className="text-xl font-bold tracking-tight text-slate-800">
             HZET GLOBAL
           </span>
         </button>
@@ -220,7 +230,7 @@ export default function Header() {
                   href="/contact"
                   className="flex w-full items-center justify-center rounded-xl bg-linear-to-r from-blue-600 to-cyan-500 px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-blue-600/20 transition-all hover:shadow-md"
                 >
-                  Liên Hệ Ngay
+                  {tc("contactNow")}
                 </Link>
               </div>
             </DrawerContent>
@@ -238,7 +248,7 @@ export default function Header() {
             href="/contact"
             className="ml-3 rounded-full bg-linear-to-r from-blue-600 to-cyan-500 px-5 py-2 text-sm font-semibold text-white shadow-sm shadow-blue-600/20 transition-all hover:shadow-md hover:shadow-blue-600/30"
           >
-            Liên Hệ
+            {t("contact")}
           </Link>
         </div>
       </div>

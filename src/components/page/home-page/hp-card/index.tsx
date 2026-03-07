@@ -2,6 +2,7 @@
 
 import { ArrowRight } from "lucide-react";
 import * as m from "motion/react-client";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import CardItem from "@/components/common/card-item";
 
@@ -27,6 +28,8 @@ export const HPCard = ({
   data,
   linkTo,
 }: HPCardProps) => {
+  const t = useTranslations("common");
+
   return (
     <section
       className={`relative overflow-hidden py-16 md:py-20 ${
@@ -64,7 +67,7 @@ export const HPCard = ({
                 : "border-slate-300 text-slate-600 hover:border-blue-600 hover:text-blue-600"
             }`}
           >
-            Xem Thêm
+            {t("viewMore")}
             <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
           </Link>
         </m.div>
@@ -94,7 +97,7 @@ export const HPCard = ({
             href={linkTo}
             className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-600/25 transition hover:bg-blue-700"
           >
-            Xem Thêm
+            {t("viewMore")}
             <ArrowRight className="size-4" />
           </Link>
         </m.div>

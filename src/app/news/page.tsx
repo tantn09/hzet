@@ -13,5 +13,5 @@ export default async function News() {
     include: 1,
   });
   const news = newsCtf.items;
-  return <Cards headerTitle="Tin Tức" data={news} />;
+  return <Cards titleKey="news" data={news} />;
 }

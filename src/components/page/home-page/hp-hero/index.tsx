@@ -16,6 +16,7 @@ const fadeUp = {
 
 export const HPHero = () => {
   const t = useTranslations("homePage.hero");
+  const tc = useTranslations("common");
   return (
     <section className="relative overflow-hidden bg-slate-800 py-16 text-white md:py-24">
       <div className="absolute -top-24 right-0 size-96 rounded-full bg-blue-600/10 blur-3xl" />
@@ -66,7 +67,7 @@ export const HPHero = () => {
             href="/about"
             className="group inline-flex items-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-semibold text-slate-900 shadow-lg shadow-white/10 transition-all hover:bg-slate-50 hover:shadow-white/20 sm:text-base"
           >
-            Tìm Hiểu Thêm
+            {tc("learnMore")}
             <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
           </Link>
         </m.div>

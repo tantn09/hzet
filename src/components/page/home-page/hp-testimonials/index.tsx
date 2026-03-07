@@ -3,6 +3,7 @@
 import Autoplay from "embla-carousel-autoplay";
 import { Quote, Star } from "lucide-react";
 import * as m from "motion/react-client";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import {
@@ -13,72 +14,48 @@ import {
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
 
-const testimonials = [
-  {
-    quote:
-      "Thời gian đầu mình khá lo lắng vì chưa biết gì về Nhật, nhưng nhờ sự hỗ trợ từ HZET Global, mọi thứ trở nên dễ dàng hơn. Giờ mình đang học tập tại Osaka, mỗi ngày đều là trải nghiệm mới.",
-    name: "Lê Thảo Vy",
-    role: "Du học sinh tại Osaka",
-    avatar: "/images/avatar/1.jpg",
-    rating: 5,
-  },
-  {
-    quote:
-      "Nhờ sự hỗ trợ nhiệt tình từ HZET Global, em đã hoàn thành hồ sơ nhanh chóng và được đào tạo tiếng bài bản trước khi xuất cảnh. Cuộc sống bên Hàn khá ổn và em rất biết ơn.",
-    name: "Phương Nga",
-    role: "Du học sinh trường OSAN",
-    avatar: "/images/avatar/2.jpg",
-    rating: 5,
-  },
-  {
-    quote:
-      "Trước khi đến với HZET Global, em cũng rất lo lắng vì chưa biết gì về tiếng Nhật hay cuộc sống bên Nhật như thế nào. Nhờ sự hỗ trợ tận tình, em đã tự tin hơn rất nhiều.",
-    name: "Nguyễn Trang",
-    role: "TTS đơn hàng nông nghiệp - Aichi",
-    avatar: "/images/avatar/3.jpg",
-    rating: 5,
-  },
-  {
-    quote:
-      "HZET Global đã giúp mình chuẩn bị hồ sơ và luyện phỏng vấn rất kỹ. Nhờ vậy mình đã đỗ visa ngay lần đầu. Rất cảm ơn sự hỗ trợ tận tình của các anh chị.",
-    name: "Trần Minh Đức",
-    role: "Du học sinh tại Tokyo",
-    avatar: "/images/avatar/4.jpg",
-    rating: 5,
-  },
-  {
-    quote:
-      "Mình rất hài lòng với dịch vụ tư vấn của HZET Global. Mọi thứ đều rõ ràng, minh bạch và luôn được hỗ trợ kịp thời khi cần.",
-    name: "Hoàng Thị Mai",
-    role: "TTS đơn hàng chế biến thực phẩm",
-    avatar: "/images/avatar/5.jpg",
-    rating: 5,
-  },
+const TESTIMONIAL_COUNT = 5;
+const AVATARS = [
+  "/images/avatar/1.jpg",
+  "/images/avatar/2.jpg",
+  "/images/avatar/3.jpg",
+  "/images/avatar/4.jpg",
+  "/images/avatar/5.jpg",
 ];
 
-function TestimonialCard({ item }: { item: (typeof testimonials)[number] }) {
+function TestimonialCard({
+  quote,
+  name,
+  role,
+  avatar,
+}: {
+  quote: string;
+  name: string;
+  role: string;
+  avatar: string;
+}) {
   return (
     <div className="group flex h-full flex-col rounded-3xl bg-white p-6 ring-1 ring-slate-200/70 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-600/5 hover:ring-blue-200">
       <Quote className="mb-4 size-8 text-blue-600/15 transition-colors duration-300 group-hover:text-blue-600/40" />
 
       <p className="flex-1 text-[15px] leading-relaxed text-slate-600">
-        &ldquo;{item.quote}&rdquo;
+        &ldquo;{quote}&rdquo;
       </p>
 
       <div className="mt-6 flex items-center gap-3 border-t border-dashed border-slate-100 pt-5">
         <Image
-          src={item.avatar}
-          alt={item.name}
+          src={avatar}
+          alt={name}
           width={44}
           height={44}
           className="size-11 rounded-full object-cover ring-2 ring-white shadow-sm transition-transform duration-300 group-hover:scale-110"
         />
         <div className="flex-1">
-          <div className="text-sm font-bold text-slate-900">{item.name}</div>
-          <div className="text-xs text-slate-400">{item.role}</div>
+          <div className="text-sm font-bold text-slate-900">{name}</div>
+          <div className="text-xs text-slate-400">{role}</div>
         </div>
         <div className="flex items-center gap-0.5">
-          {Array.from({ length: item.rating }).map((_, idx) => (
+          {Array.from({ length: 5 }).map((_, idx) => (
             <Star
               key={`star-${idx}`}
               className="size-3.5 fill-amber-400 text-amber-400 transition-transform duration-300 group-hover:scale-110"
@@ -91,9 +68,17 @@ function TestimonialCard({ item }: { item: (typeof testimonials)[number] }) {
 }
 
 export const HPTestimonials = () => {
+  const t = useTranslations("homePage.testimonials");
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
+
+  const testimonials = Array.from({ length: TESTIMONIAL_COUNT }, (_, i) => ({
+    quote: t(`quote${i + 1}`),
+    name: t(`name${i + 1}`),
+    role: t(`role${i + 1}`),
+    avatar: AVATARS[i],
+  }));
 
   const onSelect = useCallback(() => {
     if (!api) return;
@@ -124,10 +109,9 @@ export const HPTestimonials = () => {
           transition={{ duration: 0.5 }}
         >
           <div className="mx-auto mb-4 h-1 w-10 rounded-full bg-blue-600" />
-          <h2 className="typo-h2 text-slate-900">Cảm Nhận Của Khách Hàng</h2>
+          <h2 className="typo-h2 text-slate-900">{t("title")}</h2>
           <p className="mx-auto mt-3 max-w-xl text-sm text-slate-500 sm:text-base">
-            Trải qua nhiều năm hoạt động, HZET Global tự hào đã đồng hành cùng
-            hàng trăm học sinh, TTS trên hành trình chinh phục ước mơ quốc tế.
+            {t("desc")}
           </p>
         </m.div>
 
@@ -143,7 +127,7 @@ export const HPTestimonials = () => {
                 key={item.name}
                 className="pl-4 sm:basis-1/2 lg:basis-1/3"
               >
-                <TestimonialCard item={item} />
+                <TestimonialCard {...item} />
               </CarouselItem>
             ))}
           </CarouselContent>

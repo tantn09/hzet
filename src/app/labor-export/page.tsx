@@ -13,5 +13,5 @@ export default async function LaborExport() {
     include: 1,
   });
   const laborExports = laborExportctf.items;
-  return <Cards headerTitle="Cung ứng lao động" data={laborExports} />;
+  return <Cards titleKey="laborExport" data={laborExports} />;
 }

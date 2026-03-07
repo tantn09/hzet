@@ -8,7 +8,7 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
-export default async function NewsDetail({ params }: Props) {
+export default async function NewsDetail({ params }: Readonly<Props>) {
   const { isEnabled } = await draftMode();
   const client = getCtfClient({ isPreview: isEnabled });
   const { slug } = await params;

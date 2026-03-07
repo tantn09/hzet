@@ -25,7 +25,7 @@ export function SectionDivider({
       <svg
         viewBox="0 0 1440 120"
         preserveAspectRatio="none"
-        className="block h-16 w-full md:h-24"
+        className="block h-10 w-full md:h-16"
         style={{ display: "block" }}
       >
         <rect width="1440" height="120" fill={bottomColor} />

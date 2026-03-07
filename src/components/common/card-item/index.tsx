@@ -1,9 +1,13 @@
+"use client";
+
 import { MapPin, Users, Banknote, ArrowUpRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import { truncateString } from "@/helper/utils/string.utils";
 
 export default function CardItem({ data }: any) {
+  const t = useTranslations("common");
   const { title, thumbnail, slug, shortDescription, salary, location, quantity } =
     data;
   const image = "https:" + thumbnail?.fields?.file?.url;
@@ -61,7 +65,7 @@ export default function CardItem({ data }: any) {
 
         <div className="mt-auto flex items-center justify-between border-t border-dashed border-slate-100 pt-3">
           <span className="text-[13px] font-semibold text-blue-600 transition-colors group-hover:text-blue-700">
-            Xem chi tiết
+            {t("viewDetail")}
           </span>
           <div className="flex size-7 items-center justify-center rounded-full bg-blue-50 transition-all duration-300 group-hover:bg-blue-600">
             <ArrowUpRight className="size-3.5 text-blue-600 transition-colors duration-300 group-hover:text-white" />

@@ -49,7 +49,7 @@ export const HPContent = () => {
           transition={{ duration: 0.5 }}
         >
           <div className="mx-auto mb-4 h-1 w-10 rounded-full bg-blue-600" />
-          <h2 className="typo-h2 text-slate-900">Tầm Nhìn & Giá Trị</h2>
+          <h2 className="typo-h2 text-slate-900">{t("sectionTitle")}</h2>
         </m.div>
 
         <div className="grid gap-6 md:grid-cols-3">
